@@ -33,12 +33,13 @@
             overflow: hidden;
         }
 
-        .video-background video {
+        .video-background iframe {
             width: 100%;
             height: 100%;
             min-width: 100vw;
             min-height: 100vh;
             object-fit: cover;
+            border: none;
         }
 
         .overlay {
@@ -64,7 +65,7 @@
             padding: 5px 15px;
             z-index: 3;
             gap: 25px;
-            border-bottom: 1px solid white; /* Thinner outline */
+            border-bottom: 1px solid white;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
@@ -300,7 +301,6 @@
             font-size: 3em;
             margin: 0 0 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Kept glow */
         }
 
         .staff-grid {
@@ -312,7 +312,7 @@
         }
 
         .staff-member {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); /* Changed to white hue */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
             padding: 20px;
             border-radius: 15px;
             text-align: center;
@@ -337,7 +337,7 @@
             border-radius: 50%;
             margin-bottom: 15px;
             object-fit: cover;
-            border: 2px solid white; /* Changed to white */
+            border: 2px solid white;
         }
 
         .staff-member h3 {
@@ -436,10 +436,7 @@
     <div class="loader">Loading Lifestyle...</div>
     <div class="main-container">
         <div class="video-background">
-            <video autoplay muted loop id="background-video">
-                <source src="C:/Users/Treavor/Desktop/lsbrole.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe src="https://www.youtube.com/embed/VesGskVAWEI?autoplay=1&mute=1&loop=1&playlist=VesGskVAWEI&controls=0" allowfullscreen></iframe>
         </div>
         <div class="overlay"></div>
         <div class="header">
@@ -461,30 +458,30 @@
         <div class="carousel-container">
             <div class="carousel-top">
                 <div class="carousel-track">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp1.jpg" alt="Image 1">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp2.jpg" alt="Image 2">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp3.jpg" alt="Image 3">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp4.jpg" alt="Image 4">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp5.jpg" alt="Image 5">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp1.jpg" alt="Image 1">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp2.jpg" alt="Image 2">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp3.jpg" alt="Image 3">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp4.jpg" alt="Image 4">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp5.jpg" alt="Image 5">
+                    <img src="landingpics/lsrp1.jpg" alt="Image 1">
+                    <img src="landingpics/lsrp2.jpg" alt="Image 2">
+                    <img src="landingpics/lsrp3.jpg" alt="Image 3">
+                    <img src="landingpics/lsrp4.jpg" alt="Image 4">
+                    <img src="landingpics/lsrp5.jpg" alt="Image 5">
+                    <img src="landingpics/lsrp1.jpg" alt="Image 1">
+                    <img src="landingpics/lsrp2.jpg" alt="Image 2">
+                    <img src="landingpics/lsrp3.jpg" alt="Image 3">
+                    <img src="landingpics/lsrp4.jpg" alt="Image 4">
+                    <img src="landingpics/lsrp5.jpg" alt="Image 5">
                 </div>
             </div>
             <div class="carousel-bottom">
                 <div class="carousel-track">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp6.jpg" alt="Image 6">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp7.jpg" alt="Image 7">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp8.jpg" alt="Image 8">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp9.jpg" alt="Image 9">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp10.jpg" alt="Image 10">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp6.jpg" alt="Image 6">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp7.jpg" alt="Image 7">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp8.jpg" alt="Image 8">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp9.jpg" alt="Image 9">
-                    <img src="C:/Users/Treavor/Desktop/landingpics/lsrp10.jpg" alt="Image 10">
+                    <img src="landingpics/lsrp6.jpg" alt="Image 6">
+                    <img src="landingpics/lsrp7.jpg" alt="Image 7">
+                    <img src="landingpics/lsrp8.jpg" alt="Image 8">
+                    <img src="landingpics/lsrp9.jpg" alt="Image 9">
+                    <img src="landingpics/lsrp10.jpg" alt="Image 10">
+                    <img src="landingpics/lsrp6.jpg" alt="Image 6">
+                    <img src="landingpics/lsrp7.jpg" alt="Image 7">
+                    <img src="landingpics/lsrp8.jpg" alt="Image 8">
+                    <img src="landingpics/lsrp9.jpg" alt="Image 9">
+                    <img src="landingpics/lsrp10.jpg" alt="Image 10">
                 </div>
             </div>
         </div>
@@ -552,13 +549,13 @@
                     <p>Superadmin and Developer</p>
                 </a>
                 <a href="https://steamcommunity.com/profiles/76561198008561674" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1485206412256-7016fda17b8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Frank Tester">
-                    <h3>Frank Tester</h3>
+                    <img src="https://images.unsplash.com/photo-1485206412256-7016fda17b8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Frank">
+                    <h3>Frank</h3>
                     <p>Tester</p>
                 </a>
                 <a href="https://steamcommunity.com/id/ohnomilez" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Miles Admin">
-                    <h3>Miles Admin</h3>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Miles">
+                    <h3>Miles</h3>
                     <p>Admin</p>
                 </a>
             </div>
