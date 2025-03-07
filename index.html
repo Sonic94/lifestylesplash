@@ -15,34 +15,13 @@
             font-family: Arial, sans-serif;
             cursor: url('https://via.placeholder.com/16x16?text=+'), auto;
             overflow-x: hidden;
+            background: #2C2C2E; /* Dark grey static background */
         }
 
         .main-container {
             position: relative;
             min-height: 330vh;
             width: 100%;
-        }
-
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            overflow: hidden;
-        }
-
-        .video-background iframe {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-            min-width: 100%; /* Ensure it stretches */
-            min-height: 100%; /* Ensure it stretches */
-            transform: translate(-50%, -50%); /* Center it */
-            border: none;
         }
 
         .overlay {
@@ -54,6 +33,7 @@
             background: linear-gradient(45deg, rgba(0,0,0,0.1), rgba(255,255,255,0.1));
             animation: pulse 3s infinite;
             z-index: -1;
+            box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
         }
 
         .header {
@@ -103,6 +83,46 @@
             transform: scale(1.05);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             border: 1px solid #00ccff;
+        }
+
+        .slideshow {
+            position: absolute;
+            top: 50vh; /* Center vertically in the first 100vh */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+            width: 80vw; /* Roughly screen-sized but constrained */
+            height: 60vh; /* Increased height to fit better */
+            z-index: 1; /* Above overlay, below content */
+            overflow: hidden;
+            border: 20px solid transparent; /* Space for blurred edge */
+        }
+
+        .slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 2s ease-in-out; /* Slower fade */
+            filter: blur(10px); /* Blur the edges */
+            z-index: 1; /* Ensure image is above container */
+        }
+
+        .slideshow .image-wrapper {
+            position: absolute;
+            top: 10px; /* Offset to fit within border */
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            overflow: hidden;
+            z-index: 2; /* Above blurred image */
+        }
+
+        .slideshow .image-wrapper img {
+            filter: none; /* Clear image in center */
+            transition: opacity 2s ease-in-out; /* Match fade timing */
         }
 
         .content {
@@ -304,6 +324,7 @@
             font-size: 3em;
             margin: 0 0 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .staff-grid {
@@ -438,13 +459,10 @@
 <body>
     <div class="loader">Loading Lifestyle...</div>
     <div class="main-container">
-        <div class="video-background">
-            <iframe src="https://www.youtube.com/embed/VesGskVAWEI?autoplay=1&mute=1&loop=1&playlist=VesGskVAWEI&controls=0" allowfullscreen></iframe>
-        </div>
         <div class="overlay"></div>
         <div class="header">
             <div class="left-buttons">
-                <a href="https://discord.usgamehosting.com" class="button">Discord</a>
+                <a href="https://discord.uusgamehosting.com" class="button">Discord</a>
                 <a href="https://forums.usgamehosting.com/" class="button">Forums</a>
                 <a href="https://steamcommunity.com/groups/USGHLS" class="button">Steam</a>
             </div>
@@ -454,6 +472,48 @@
                 <a href="https://donate.usgamehosting.com/store.php?page=packages&id=1" class="button">Shop</a>
                 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3426578493" class="button">Content</a>
             </div>
+        </div>
+        <div class="slideshow">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp1.jpg" alt="Slide 1">
+            </div>
+            <img src="landingpics/lsrp1.jpg" alt="Slide 1" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp2.jpg" alt="Slide 2">
+            </div>
+            <img src="landingpics/lsrp2.jpg" alt="Slide 2" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp3.jpg" alt="Slide 3">
+            </div>
+            <img src="landingpics/lsrp3.jpg" alt="Slide 3" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp4.jpg" alt="Slide 4">
+            </div>
+            <img src="landingpics/lsrp4.jpg" alt="Slide 4" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp5.jpg" alt="Slide 5">
+            </div>
+            <img src="landingpics/lsrp5.jpg" alt="Slide 5" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp6.jpg" alt="Slide 6">
+            </div>
+            <img src="landingpics/lsrp6.jpg" alt="Slide 6" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp7.jpg" alt="Slide 7">
+            </div>
+            <img src="landingpics/lsrp7.jpg" alt="Slide 7" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp8.jpg" alt="Slide 8">
+            </div>
+            <img src="landingpics/lsrp8.jpg" alt="Slide 8" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp9.jpg" alt="Slide 9">
+            </div>
+            <img src="landingpics/lsrp9.jpg" alt="Slide 9" class="blur-layer">
+            <div class="image-wrapper">
+                <img src="landingpics/lsrp10.jpg" alt="Slide 10">
+            </div>
+            <img src="landingpics/lsrp10.jpg" alt="Slide 10" class="blur-layer">
         </div>
         <div class="content">
             <!-- Empty -->
@@ -521,44 +581,44 @@
         <div class="staff-section">
             <h2>Meet the Staff</h2>
             <div class="staff-grid">
-                <a href="https://steamcommunity.com/profiles/76561197983540425" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Andy">
+                <a href="https://steamcommunity.com/profiles/76561197983540425" class="staff-member" data-steamid="76561197983540425">
+                    <img src="" alt="Andy" class="steam-avatar">
                     <h3>Andy</h3>
                     <p>Founder</p>
                 </a>
-                <a href="https://steamcommunity.com/id/XTC1995" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="XTC">
+                <a href="https://steamcommunity.com/id/XTC1995" class="staff-member" data-steamid="76561198007762842">
+                    <img src="" alt="XTC" class="steam-avatar">
                     <h3>XTC</h3>
                     <p>Founder and OG Developer</p>
                 </a>
-                <a href="https://steamcommunity.com/id/qigjmark" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Josh">
+                <a href="https://steamcommunity.com/id/qigjmark" class="staff-member" data-steamid="76561198001686788">
+                    <img src="" alt="Josh" class="steam-avatar">
                     <h3>Josh</h3>
                     <p>Founder/Lead Developer</p>
                 </a>
-                <a href="https://steamcommunity.com/id/DetJake" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Jake">
+                <a href="https://steamcommunity.com/id/DetJake" class="staff-member" data-steamid="76561198041971588">
+                    <img src="" alt="Jake" class="steam-avatar">
                     <h3>Jake</h3>
                     <p>Developer/Community Leader</p>
                 </a>
-                <a href="https://steamcommunity.com/id/Treavor" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Treavor">
+                <a href="https://steamcommunity.com/id/Treavor" class="staff-member" data-steamid="76561198041971588">
+                    <img src="" alt="Treavor" class="steam-avatar">
                     <h3>Treavor</h3>
                     <p>Developer</p>
                 </a>
-                <a href="https://steamcommunity.com/id/JoeNoob123" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Joe">
-                    <h3>Julie</h3>
+                <a href="https://steamcommunity.com/id/JoeNoob123" class="staff-member" data-steamid="76561198041971588">
+                    <img src="" alt="Joe" class="steam-avatar">
+                    <h3>Joe</h3>
                     <p>Superadmin and Developer</p>
                 </a>
-                <a href="https://steamcommunity.com/profiles/76561198008561674" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1485206412256-7016fda17b8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Frank">
-                    <h3>Frank</h3>
+                <a href="https://steamcommunity.com/profiles/76561198008561674" class="staff-member" data-steamid="76561198008561674">
+                    <img src="" alt="Frank Tester" class="steam-avatar">
+                    <h3>Frank Tester</h3>
                     <p>Tester</p>
                 </a>
-                <a href="https://steamcommunity.com/id/ohnomilez" class="staff-member">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Miles">
-                    <h3>Miles</h3>
+                <a href="https://steamcommunity.com/id/ohnomilez" class="staff-member" data-steamid="76561198041971588">
+                    <img src="" alt="Miles Admin" class="steam-avatar">
+                    <h3>Miles Admin</h3>
                     <p>Admin</p>
                 </a>
             </div>
@@ -574,13 +634,69 @@
     </div>
 
     <script>
-        // Click to Enlarge Images
-        const images = document.querySelectorAll('.carousel-track img');
-        images.forEach(img => {
+        // Steam API Key (replace with your own)
+        const apiKey = 'YOUR_STEAM_API_KEY_HERE'; // Get this from https://steamcommunity.com/dev/apikey
+
+        // Function to fetch Steam avatar
+        async function fetchSteamAvatar(steamId, imgElement) {
+            try {
+                const response = await fetch(`http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamId}`);
+                const data = await response.json();
+                const avatarUrl = data.response.players[0]?.avatarfull || 'https://via.placeholder.com/150'; // Fallback if no avatar
+                imgElement.src = avatarUrl;
+            } catch (error) {
+                console.error('Error fetching Steam avatar:', error);
+                imgElement.src = 'https://via.placeholder.com/150'; // Fallback on error
+            }
+        }
+
+        // Fetch avatars for all staff members
+        document.querySelectorAll('.staff-member').forEach(member => {
+            const steamId = member.getAttribute('data-steamid');
+            const imgElement = member.querySelector('.steam-avatar');
+            if (steamId) {
+                fetchSteamAvatar(steamId, imgElement);
+            }
+        });
+
+        // Click to Enlarge Images in Carousel
+        const carouselImages = document.querySelectorAll('.carousel-track img');
+        carouselImages.forEach(img => {
             img.addEventListener('click', () => {
                 img.classList.toggle('clicked');
             });
         });
+
+        // Slideshow Logic
+        const slideshowWrappers = document.querySelectorAll('.slideshow .image-wrapper');
+        let currentIndex = 0;
+        const fadeInTime = 2000; // 2 seconds fade in (slower)
+        const holdTime = 5000;   // 5 seconds hold (slower)
+        const fadeOutTime = 2000;// 2 seconds fade out (slower)
+        const totalCycleTime = fadeInTime + holdTime + fadeOutTime; // 9 seconds per image
+
+        function showNextImage() {
+            // Fade out current image and its blur layer
+            slideshowWrappers[currentIndex].querySelector('img').style.opacity = '0';
+            document.querySelectorAll('.slideshow .blur-layer')[currentIndex].style.opacity = '0';
+
+            // Move to next image
+            currentIndex = (currentIndex + 1) % slideshowWrappers.length;
+
+            // Fade in next image and its blur layer
+            setTimeout(() => {
+                slideshowWrappers[currentIndex].querySelector('img').style.opacity = '1';
+                document.querySelectorAll('.slideshow .blur-layer')[currentIndex].style.opacity = '1';
+            }, fadeOutTime); // Wait for fade out to complete
+
+            // Schedule next transition
+            setTimeout(showNextImage, totalCycleTime);
+        }
+
+        // Start with first image visible
+        slideshowWrappers[0].querySelector('img').style.opacity = '1';
+        document.querySelectorAll('.slideshow .blur-layer')[0].style.opacity = '1';
+        setTimeout(showNextImage, totalCycleTime);
     </script>
 </body>
 </html>
